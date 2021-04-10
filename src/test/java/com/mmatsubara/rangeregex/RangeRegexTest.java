@@ -55,88 +55,88 @@ public class RangeRegexTest {
 
 	@Test public void test_equal_3() {
 		String regex = RangeRegex.boundedRegexForRange(192, 100020000300000L);
-		verifyRange(regex, 192, 100020000300000L, 0, 1000);
-		verifyRange(regex, 192, 100020000300000L, 100019999300000L, 100020000400000L);
+		verifyRange(regex,                              192, 100020000300000L, 0, 1000);
+		verifyRange(regex,                              192, 100020000300000L, 100019999200000L, 100020000400000L);
 	}
 
 	@Test public void test_repeated_digit() {
 		String regex = RangeRegex.boundedRegexForRange(10331, 20381);
-		verifyRange(regex, 10331, 20381, 0, 99999);
+		verifyRange(regex,                              10331, 20381, 0, 99999);
 	}
 
 	@Test public void test_repeated_zeros() {
 		String regex = RangeRegex.boundedRegexForRange(10031, 20081);
-		verifyRange(regex, 10031, 20081, 0, 99999);
+		verifyRange(regex,                              10031, 20081, 0, 99999);
 	}
 
 	@Test public void test_zero_one() {
 		String regex = RangeRegex.boundedRegexForRange(10301, 20101);
-		verifyRange(regex, 10301, 20101, 0, 99999);
+		verifyRange(regex,                              10301, 20101, 0, 99999);
 	}
 
 	@Test public void test_different_len_numbers_1() {
 		String regex = RangeRegex.boundedRegexForRange(1030, 20101);
-		verifyRange(regex, 1030, 20101, 0, 99999);
+		verifyRange(regex,                              1030, 20101, 0, 99999);
 	}
 
 	@Test public void test_repetead_one() {
 		String regex = RangeRegex.boundedRegexForRange(102, 111);
-		verifyRange(regex, 102, 111, 0, 1000);
+		verifyRange(regex,                              102, 111, 0, 1000);
 	}
 
 	@Test public void test_small_diff_1() {
 		String regex = RangeRegex.boundedRegexForRange(102, 110);
-		verifyRange(regex, 102, 110, 0, 1000);
+		verifyRange(regex,                              102, 110, 0, 1000);
 	}
 
 	@Test public void test_small_diff_2() {
 		String regex = RangeRegex.boundedRegexForRange(102, 130);
-		verifyRange(regex, 102, 130, 0, 1000);
+		verifyRange(regex,                              102, 130, 0, 1000);
 	}
 
 	@Test public void test_random_range_1() {
 		String regex = RangeRegex.boundedRegexForRange(4173, 7981);
-		verifyRange(regex, 4173, 7981, 0, 99999);
+		verifyRange(regex,                              4173, 7981, 0, 99999);
 	}
 
 	@Test public void test_one_digit_numbers() {
 		String regex = RangeRegex.boundedRegexForRange(3, 7);
-		verifyRange(regex, 3, 7, 0, 99);
+		verifyRange(regex,                              3, 7, 0, 99);
 	}
 
 	@Test public void test_one_digit_at_bounds() {
 		String regex = RangeRegex.boundedRegexForRange(1, 9);
-		verifyRange(regex, 1, 9, 0, 1000);
+		verifyRange(regex,                              1, 9, 0, 1000);
 	}
 
 	@Test public void test_power_of_ten() {
 		String regex = RangeRegex.boundedRegexForRange(1000, 8632);
-		verifyRange(regex, 1000, 8632, 0, 99999);
+		verifyRange(regex,                              1000, 8632, 0, 99999);
 	}
 
 	@Test public void test_different_len_numbers_2() {
 		String regex = RangeRegex.boundedRegexForRange(13, 8632);
-		verifyRange(regex, 13, 8632, 0, 10000);
+		verifyRange(regex,                              13, 8632, 0, 10000);
 	}
 
 	@Test public void test_different_len_numbers_small_diff() {
 		String regex = RangeRegex.boundedRegexForRange(9, 11);
-		verifyRange(regex, 9, 11, 0, 100);
+		verifyRange(regex,                              9, 11, 0, 100);
 	}
 
 	@Test public void test_different_len_zero_eight_nine() {
 		String regex = RangeRegex.boundedRegexForRange(90, 980099);
-		verifyRange(regex, 90, 980099, 0, 999999);
+		verifyRange(regex,                              90, 980099, 0, 999999);
 	}
 
 	@Test public void test_small_diff() {
 		String regex = RangeRegex.boundedRegexForRange(19, 21);
-		verifyRange(regex, 19, 21, 0, 100);
+		verifyRange(regex,                              19, 21, 0, 100);
 	}
 
 	@Test public void test_different_len_zero_one_nine() {
 		String regex = RangeRegex.boundedRegexForRange(999, 10000);
-		verifyRange(regex, 999, 10000, 1, 20000);
+		verifyRange(regex,                              999, 10000, 1, 20000);
 	}
 
 	// matsubara Delphi version original specification
