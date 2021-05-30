@@ -259,6 +259,13 @@ public class RangeRegex {
 
 
 	public static void main(String[] argv) {
-    	System.out.println(RangeRegex.regexForRange(-9, 9));
+		if (argv.length < 2) {
+			System.err.println("argument error.");
+			return;
+		}
+
+		long min = Long.parseLong(argv[0]);
+		long max = Long.parseLong(argv[1]);
+    	System.out.println(RangeRegex.regexForRange(min, max));
 	}
 }
